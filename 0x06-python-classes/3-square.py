@@ -1,18 +1,16 @@
 #!/usr/bin/python3
-Square = __import__('3-square').Square
+""" Creates the Square class """
 
-my_square_1 = Square(3)
-print("Area: {}".format(my_square_1.area()))
+class Square:
+    """ Class representing a square """
+    def __init__(self, side_length=0):
+        if type(side_length) != int:
+            raise TypeError("side_length must be an integer")
+        elif side_length < 0:
+            raise ValueError("side_length must be >= 0")
+        else:
+            self.__side_length = side_length
 
-try:
-    print(my_square_1.size)
-except Exception as e:
-    print(e)
+    def area(self):
+        return self.__side_length * self.__side_length
 
-try:
-    print(my_square_1.__size)
-except Exception as e:
-    print(e)
-
-my_square_2 = Square(5)
-print("Area: {}".format(my_square_2.area()))
