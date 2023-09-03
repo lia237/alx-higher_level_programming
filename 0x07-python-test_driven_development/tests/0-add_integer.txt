@@ -1,0 +1,48 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(2)
+100
+
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(100.3, -2)
+98
+
+>>> add_integer(4, "School")
+
+>>> add_integer(None)
+
+>>> add_integer()
+
+>>> add_integer("unicorn")
+
+>>> add_integer(5, None)
+
+>>> add_integer(34, 54, 67)
+
+>>> add_integer(2.5, 3.7)
+5
+
+>>> add_integer(3.7)
+101
+
+>>> add_integer([1, 2, 3])
+
+>>> add_integer((1, 2, 3))
+
+>>> add_integer({"a": 1, "b": 2, "c": 3})
+
+>>> add_integer(None)
+
+>>> add_integer(float('-inf'), float('inf'))
+
+>>> add_integer(100e1000, 1)
+
+>>> add_integer(float('inf'))
+
+>>> add_integer(float('nan'), 0)
+
