@@ -1,20 +1,31 @@
 #!/usr/bin/python3
-"""Module for saving to json"""
-import json
-import os.path
-import sys
-from sys import argv
+"""
+    Module for class Student.
+"""
 
-save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
-filename = "add_item.json"
-json_list = []
+class Student:
+    """
+        A class students that defines a student by:
+        Attributes:
+            first_name (str): The first name of the student.
+            last_name (str): The last name of the student.
+            age (int): The age of the student.
+        Methods:
+            __init__ - Initializes the Student instance.
+            to_json - Retrieves a dictionary representation of the Student instance.
+    """
+    def __init__(self, first_name, last_name, age):
+        """
+            Initializes a Student instance.
+        """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-if os.path.exists(filename):
-    json_list = load_from_json_file(filename)
+    def to_json(self):
+        """
+            Retrieves a dictionary representation of the Student.
+        """
+        return self.__dict__
 
-for index in argv[1:]:
-    json_list.append(index)
-
-save_to_json_file(json_list, filename)
