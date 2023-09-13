@@ -1,20 +1,10 @@
 #!/usr/bin/python3
-"""
-Module for appending text to a file.
-"""
+def read_lines(filename="", nb_lines=0):
+    """ function reads n lines of a text file (UTF8) prints it stdout """
 
-
-def append_text_to_file(file_path="", text_to_append=""):
-    """
-    append_text_to_file - Appends a string to the end of a text file (UTF-8) and returns the number of characters added.
-
-    Args:
-        file_path (str): The path of the file to which text should be appended.
-        text_to_append (str): The text to be appended to the file.
-
-    Returns:
-        int: The number of characters written to the file.
-    """
-    with open(file_path, mode="a", encoding="UTF-8") as file:
-        return file.write(text_to_append)
-
+    with open(filename, encoding='utf-8') as f:
+        lines = f.readlines()
+        if nb_lines <= 0 or nb_lines >= len(lines):
+            [print(i, end='') for i in lines]
+        else:
+            [print(lines[i], end='') for i in range(0, nb_lines)]
