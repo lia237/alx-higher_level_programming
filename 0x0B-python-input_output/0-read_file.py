@@ -1,17 +1,15 @@
 #!/usr/bin/python3
 """
-Module for reading and printing the content of a text file.
+0-read_file module
 """
 
 
-def read_and_print_text_file(file_path=""):
+def read_file(filename=""):
     """
-    read_and_print_text_file - reads a text file (UTF-8) and prints its content to stdout.
-
+    read_file - reads a text file (UTF8) and prints it to stdout
     Args:
-        file_path (str): The path to the text file to be read and printed.
+        filename: name of the file
     """
-    with open(file_path, "r", encoding="UTF-8") as file:
-        for line in file:
+    with open(filename, "r", encoding="UTF-8") as f:
+        for line in f:
             print(line, end="")
-
